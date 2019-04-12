@@ -1,0 +1,223 @@
+* {
+  user-select: none;
+}
+main {
+  width: 95%;
+  margin: 2% auto;
+}
+
+h1 {
+  text-align: center;
+  color: #666;
+}
+h1 svg {
+  margin-right: 20px;
+  color: hotpink;
+}
+h1 svg.atom {
+  margin-left: 20px;
+  color: #61dbfb;
+}
+
+strong {
+  color: hotpink;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+nav button, nav .button {
+  border: 0;
+  padding: 5px 10px 5px 5px;
+  font-size: 1em;
+  border-radius: 30px;
+  background-color: #eee;
+  cursor: pointer;
+  color: #666;
+  border: 1px solid #aaa;
+  text-decoration: none;
+  display: inline-block;
+}
+button svg, 
+button .svg-inline--fa,
+.button svg, 
+.button .svg-inline--fa {
+  margin-right: 10px;
+  background: #ccc;
+  color: hotpink;
+  padding: 10px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.right {
+  float: right;
+  margin-right: 0;
+}
+
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+  user-select: none;
+  transform-style: preserve-3d;
+  margin: 0 2% 4%;
+  width: 46%;
+  padding-top: 23%;
+  border: 0;
+}
+
+:focus {
+  outline: 1px hotpink dotted;
+}
+
+.card div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: .6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+.card p {
+  margin: 0;
+  font-size: 6em;
+}
+.card img {
+  max-width: 70%;
+  max-height: 70%;
+}
+.card .front {
+  background-color: #ccc;
+  color: #000;
+}
+.card .back {
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  color: #ccc;
+}
+.card .front, 
+.card.flipping,
+.card.matched {
+  transform: rotateY(180deg);
+}
+.card.matched .front {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05) inset;
+  animation-fill-mode: both;
+  opacity: .3;
+}
+
+.options {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.options .card {
+  opacity: .4;
+  filter: grayscale(100%);
+}
+.options .card.selected {
+  opacity: 1;
+  filter: none;
+}
+
+.errors {
+  color: #666;
+}
+
+.finish {
+  background-position: center;
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finish .content {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  color: #666;
+  z-index: 1;
+  border: 1px solid #000;
+  box-shadow: inset 0 0 6px 2px rgba(0,0,0,.5);
+}
+
+.finish .content:before {
+  content: "";
+  position: absolute; 
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255,.6);
+  filter: blur(2px);
+  z-index: -1;
+}
+.finish nav {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.finish nav button, 
+.finish nav .button {
+  margin: 0 20px 10px;
+}
+
+.fadein {
+  animation: fadein .3s;
+}
+
+@keyframes fadein {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+/* Responsive */
+@media all and (min-width: 480px) {
+  .finish nav {
+    flex-wrap: initial;
+  }
+  .finish nav button, 
+  .finish nav .button {
+    margin: 0 20px;
+  }
+  .card {
+    padding-top:18%; 
+    margin: 0 1% 4%;
+    width: 18%;
+  } 
+}
+
+@media all and (min-width: 1280px) {
+  main {
+    width: 80%;
+  }
+}
+@media all and (min-width: 1690px) {
+}

@@ -1,0 +1,33 @@
+.bigdeck .card {
+  margin: 0 1% 3%;
+  width: 23%;
+}
+
+@media all and (min-width: 480px) {
+  .bigdeck .card {
+    margin: 0 2% 2%;
+    width: 16%;
+    padding-top: 12%;
+    font-size: .6em;
+  }
+  
+}
+
+@media all and (min-width: 736px) {
+  .bigdeck .card {
+    margin: 0 2% 4%;
+    width: 20%;
+    padding-top: 20%;
+    /* font-size: .6em; */
+  }
+}
+
+
+@media all and (min-width: 980px) {  
+  .bigdeck .card {
+    margin: 0 4% 2%;
+    width: 12%;
+    padding-top: 12%;
+    /* font-size: .6em; */
+  }
+}
